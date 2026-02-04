@@ -52,7 +52,7 @@ class InicioScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 52,
                 height: 1.1, 
-                fontWeight: FontWeight.w900, 
+                fontWeight: FontWeight.bold, 
                 color: Colors.indigo[900],
                 letterSpacing: 1.5,
               ),
@@ -72,7 +72,7 @@ class InicioScreen extends StatelessWidget {
             const Spacer(),
 
             Padding(
-              padding: const EdgeInsets.only(bottom: 60.0),
+              padding: const EdgeInsets.only(bottom: 90.0),
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo, 

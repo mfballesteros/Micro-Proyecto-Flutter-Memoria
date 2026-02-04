@@ -150,12 +150,12 @@ class _TableroJuegoState extends State<TableroJuego> {
           ),
         ],
       ),
-      body: Column(
+      body: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(16),
             color: Colors.indigo.shade50,
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _infoChip("Tiempo", "$_tiempoTranscurrido s", Icons.timer),
@@ -173,12 +173,12 @@ class _TableroJuegoState extends State<TableroJuego> {
               builder: (context, constraints) {
                 int columnas = constraints.maxWidth > 600 ? 6 : 4;
                 return GridView.builder(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.symmetric(horizontal: 350, vertical: 20),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: columnas,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.8,
+                    crossAxisSpacing: 6,
+                    mainAxisSpacing: 6,
+                    childAspectRatio: 1.1,
                   ),
                   itemCount: _cartas.length,
                   itemBuilder: (context, index) {
