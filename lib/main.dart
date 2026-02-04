@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pantallas/tablero_juego.dart';
+import 'pantallas/inicio.dart';
 
 void main() {
   runApp(const juegoMemoria());
@@ -17,7 +18,7 @@ class juegoMemoria extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.grey[100],
       ),
-      home: const TableroJuego(),
+      home: const InicioScreen(),
     );
   }
 }
