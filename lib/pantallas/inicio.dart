@@ -14,7 +14,7 @@ class InicioScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.blue[50]!, Colors.white],
+            colors: [const Color.fromARGB(255, 168, 216, 251)!, Colors.white],
           ),
         ),
         child: Column(
@@ -27,7 +27,7 @@ class InicioScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
-                color: Colors.indigo[100], 
+                color: const Color.fromARGB(255, 243, 244, 255), 
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
