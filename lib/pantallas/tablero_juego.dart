@@ -117,17 +117,60 @@ class _TableroJuegoState extends State<TableroJuego> {
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
-        title: const Text("¡Felicidades!"),
-        content: Text(
-          "Completaste el juego en $_intentos intentos\nTiempo: $_tiempoTranscurrido seg",
+        backgroundColor: Colors.indigo,
+        title: const Center(
+          child: Text(
+            "¡Felicidades!",
+            style: TextStyle(
+              fontSize: 32, 
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
+    
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.emoji_events, size: 60, color: Colors.amber), 
+            const SizedBox(height: 20),
+            Text(
+              "Completaste el juego en $_intentos intentos\nTiempo: $_tiempoTranscurrido seg",
+              textAlign: TextAlign.center, 
+              style: const TextStyle(fontSize: 18,color: Colors.white,),
+              
+            ),
+          ],
+        ),
+
+        actionsAlignment: MainAxisAlignment.spaceEvenly, 
         actions: [
+
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context); 
+              Navigator.pop(context); 
+            },
+            child: const Text(
+              "Salir", 
+              style: TextStyle(color: Colors.red, fontSize: 16)
+            ),
+          ),
+
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              _iniciarJuego();
+              _iniciarJuego(); 
             },
-            child: const Text("Jugar de nuevo"),
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+            ),
+            child: const Text(
+              "Jugar de nuevo", 
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.indigo,)
+            ),
           ),
         ],
       ),
@@ -150,12 +193,12 @@ class _TableroJuegoState extends State<TableroJuego> {
           ),
         ],
       ),
-      body: Column(
+      body: Row(
         children: [
           Container(
             padding: const EdgeInsets.all(16),
             color: Colors.indigo.shade50,
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 _infoChip("Tiempo", "$_tiempoTranscurrido s", Icons.timer),
@@ -173,12 +216,12 @@ class _TableroJuegoState extends State<TableroJuego> {
               builder: (context, constraints) {
                 int columnas = constraints.maxWidth > 600 ? 6 : 4;
                 return GridView.builder(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.symmetric(horizontal: 350, vertical: 20),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: columnas,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.8,
+                    crossAxisSpacing: 6,
+                    mainAxisSpacing: 6,
+                    childAspectRatio: 1.1,
                   ),
                   itemCount: _cartas.length,
                   itemBuilder: (context, index) {

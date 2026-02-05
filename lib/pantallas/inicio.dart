@@ -14,7 +14,7 @@ class InicioScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.blue[50]!, Colors.white],
+            colors: [const Color.fromARGB(255, 168, 216, 251)!, Colors.white],
           ),
         ),
         child: Column(
@@ -27,7 +27,7 @@ class InicioScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(25),
               decoration: BoxDecoration(
-                color: Colors.indigo[100], 
+                color: const Color.fromARGB(255, 243, 244, 255), 
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
@@ -52,7 +52,7 @@ class InicioScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 52,
                 height: 1.1, 
-                fontWeight: FontWeight.w900, 
+                fontWeight: FontWeight.bold, 
                 color: Colors.indigo[900],
                 letterSpacing: 1.5,
               ),
@@ -72,7 +72,7 @@ class InicioScreen extends StatelessWidget {
             const Spacer(),
 
             Padding(
-              padding: const EdgeInsets.only(bottom: 60.0),
+              padding: const EdgeInsets.only(bottom: 90.0),
               child: ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo, 
